@@ -1,0 +1,36 @@
+function [p,q] =pas_et_qualite(nbn,nbe,nba,coord,tri,ar,refn,reft,refa)
+L1=zeros(nbe,1);
+L2=zeros(nbe,1);
+L2=zeros(nbe,1);
+s=zeros(nbe,1);
+X=coord(:,1);
+Y=coord(:,2);
+
+
+X1=tri(:,1);
+X2=tri(:,2);
+X3=tri(:,3);
+for i=1:nbe
+    Z1=X(X1(i))-X(X2(i));
+    Z2=Y(X1(i))-Y(X2(i));
+    L1(i)=sqrt(Z1^2+Z2^2);     
+end
+for i=1:nbe
+    Z1=X(X3(i))-X(X2(i));
+    Z2=Y(X3(i))-Y(X2(i));
+    L2(i)=sqrt(Z1^2+Z2^2);
+       
+end
+for i=1:nbe
+    Z1=X(X1(i))-X(X3(i));
+    Z2=Y(X1(i))-Y(X3(i));
+    L3(i)=sqrt(Z1^2+Z2^2);
+end
+for i=1:nbe
+    s(i)=max([L1(i),L2(i),L3(i)])/(L1(i)+L2(i)+L3(i));
+end
+for i=1:nbe
+    t(i)=
+end
+    p=max([max(L1),max(L2),max(L3)]);
+    q=(sqrt(3)/3)*max(s);

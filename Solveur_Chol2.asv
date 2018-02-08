@@ -1,0 +1,9 @@
+function [U] = Solveur_Chol(A,F)
+
+[C] = Cholesky2(A);
+Y = descente2(C,F) ;
+X = remontee2(C',Y) ;
+B = A * X ;
+
+U = B ;
+end

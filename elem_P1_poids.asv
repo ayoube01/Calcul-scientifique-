@@ -1,0 +1,6 @@
+function P=elem_P1_poids(nbn,nbe,nba,coord,tri,ar,refn,reft,refa,l)
+Ar=ar(l,:);
+X=coord(:,1);
+Y=coord(:,2);
+mes=sqrt(( X(ar(1))-Y(ar(1)) )^2
+P=(mes/4)*[1 ,1 ;1 ,1];
